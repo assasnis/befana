@@ -141,7 +141,6 @@
             foreach ($pagos_clientes->result() as $pago_actual) {
 
                 $producto=$pago_actual->producto;
-                echo $producto."  ";
                 $detail=$this->User_model->detalles_producto($producto);
                 foreach ($detail->result() as $detalle) {
                
