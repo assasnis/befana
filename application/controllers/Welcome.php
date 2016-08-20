@@ -25,13 +25,9 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 	}
 	public function index()
-	{
-		if($this->session->userdata('userdata'))
-		{
-			redirect(base_url().'/user_controller');
-		}
+	{	
+		redirect(base_url().'index.php/user_controller');
 		$this->load->view('head');
 		$this->load->view('welcome');
-
 	}
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-08-2016 a las 19:11:38
+-- Tiempo de generación: 19-08-2016 a las 17:13:57
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -43,39 +43,7 @@ INSERT INTO `compras` (`id`, `producto`, `proveedor`, `fecha`, `precio`, `cantid
 (1, 1, 'chocosur', '2016-08-17', 40000, 200),
 (2, 2, 'talchoco', '2016-08-09', 30000, 30),
 (3, 1, 'prochoco', '2016-08-02', 100000, 50),
-(4, 2, 'talchoco', '2016-08-18', 100000, 40),
-(5, 1, 'chocosur', '2016-08-09', 23333, 4);
-
---
--- Disparadores `compras`
---
-DELIMITER $$
-CREATE TRIGGER `cantidad_producto` BEFORE INSERT ON `compras` FOR EACH ROW BEGIN
-  DECLARE
-    cantidad_producto INT;
-  SELECT cantidad  INTO cantidad_producto
-  FROM productos WHERE id = NEW.producto;
-   
-  	UPDATE productos SET cantidad = cantidad_producto + NEW.cantidad
-  WHERE  id = NEW.producto;
-
-END
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `orden_compra`
---
-
-CREATE TABLE `orden_compra` (
-  `id` int(11) NOT NULL,
-  `producto` int(11) NOT NULL,
-  `proveedor` varchar(255) NOT NULL,
-  `precio` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(4, 2, 'talchoco', '2016-08-18', 100000, 40);
 
 -- --------------------------------------------------------
 
@@ -87,18 +55,17 @@ CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `marca` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `peso` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `peso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `marca`, `nombre`, `peso`, `cantidad`) VALUES
-(1, 'costa', 'milk', 240, 4),
-(2, 'costa', 'coffe', 300, 0),
-(3, 'nestle', 'orange', 500, 0);
+INSERT INTO `productos` (`id`, `marca`, `nombre`, `peso`) VALUES
+(1, 'costa', 'milk', 240),
+(2, 'costa', 'coffe', 300),
+(3, 'nestle', 'orange', 500);
 
 -- --------------------------------------------------------
 
@@ -153,12 +120,6 @@ ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `orden_compra`
---
-ALTER TABLE `orden_compra`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -184,12 +145,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `orden_compra`
---
-ALTER TABLE `orden_compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
