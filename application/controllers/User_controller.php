@@ -29,7 +29,17 @@ class User_controller extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('head');
+		$this->load->view('header');
+		$this->load->view('side_bar');
 		$this->load->view('/Usuarios/index_user');
+	}
+
+	public function inventario()
+	{
+		$this->load->view('head');
+		$this->load->view('header');
+		$this->load->view('side_bar');
+		$this->load->view('/Usuarios/productos');
 	}
 
 	public function validar()

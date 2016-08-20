@@ -1,35 +1,11 @@
 
 <!DOCTYPE html>
 
-<body>
-  <link rel="stylesheet"
-  href= <?php echo base_url() . 'css/estilo.css'; ?> ></style>
-  
-  <link rel="stylesheet"
-  href= <?php echo base_url() . 'css/otros/dataTables.bootstrap.min'; ?>></style>
 
-  <script src=<?php echo base_url() . 'css/otros/jquery.min.js'; ?>></script>
 
-  <link rel="stylesheet"
-  href= <?php echo base_url() . 'css/otros/jquery.dataTables.min.css'; ?> ></style>
 
-  <script type="text/javascript" 
-  src= <?php echo base_url() . 'css/otros/jquery.dataTables.min.js'; ?>></script>
-
-  <script>
-  $(document).ready(function(){
-      $('#tabla_clientes').dataTable({
-          "order": [[ 1, "asc" ]]
-      });
-  });
-  </script>
-
-    </script>
-    
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
    
-
     
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -38,7 +14,7 @@
       </div>
             
       <div class="panel-body">
-        <!-- Obtencion pagos en semana a partir del dia actual-->
+       
         
         <h1 class="page-header">Informe semana actual:</h1>
 
@@ -141,7 +117,7 @@
             foreach ($pagos_clientes->result() as $pago_actual) {
 
                 $producto=$pago_actual->producto;
-                echo $producto."  ";
+               
                 $detail=$this->User_model->detalles_producto($producto);
                 foreach ($detail->result() as $detalle) {
                

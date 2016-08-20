@@ -44,13 +44,27 @@ class User_model extends CI_Model
 			$respuesta=$this->db->query($consulta);
 			if($respuesta){ 
 				return $respuesta;
-				echo $id;
+				
 			}		
 			else{
 			 
 			 	return false;
 			}
 	}
+
+	function inventario()
+	{
+		$consulta="SELECT * FROM productos";
+			$respuesta=$this->db->query($consulta);
+			if($respuesta){ 
+				return $respuesta;				
+			}		
+			else{
+			 
+			 	return false;
+			}
+	}
+
 }
 
 

@@ -8,31 +8,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	
 	<body>
-		<!----- start-header---->
-			<div id="home" class="header">
-					<div class="top-header">
-						<div class="container">
-						<div class="logo">
-							<a href="#"><img src="images/befanita.jpeg" title="Befana" /></a>
-						</div>
-						<!----start-top-nav---->
-						 <nav class="top-nav">
-							<ul class="top-nav">
-								<li><a href="#home" class="scroll">Home</a><span> </span></li>
-								<li><a href="#about" class="scroll">About ME </a></li>
-								<li><a href="#services" class="scroll">Services</a></li>
-								<li><a href="#work" class="scroll">MY work</a><span> </span></li>
-								<li><a href="#contact" class="scroll">contact ME</a></li>
-								<div class="clearfix"> </div>
-							</ul>
-							<a href="#" id="pull"><img src="images/nav-icon.png" title="menu" /></a>
-						</nav>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-			<!----- //End-header---->
-			<!----banner---->
 			 <form id="myform" action=<?php echo base_url().'index.php/User_controller/validar';?> method="post" role="form" class="form-horizontal" >
                         
 			 	<div class="panel panel-default">
