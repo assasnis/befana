@@ -9,14 +9,14 @@
     
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title"><h3> <span class="glyphicon glyphicon-home" aria-hidden="true"> </span>
-         &nbsp Inicio Usuario</h3></h1>
+        <h1 class="panel-title"><h3> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span>
+         &nbsp Inventario</h3></h1>
       </div>
             
       <div class="panel-body">
        
         
-        <h1 class="page-header">Inventario:</h1>
+        <h1 class="page-header">Productos:</h1>
 
         <?php 
           
