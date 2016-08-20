@@ -32,39 +32,13 @@
     </ul>
 
     <ul class="nav nav-sidebar">
-      <li><a href="">
-        <h5> <span class="glyphicon glyphicon-file" aria-hidden="true"> </span>
-         &nbsp &nbsp Informes</h5>
-      </a></li>
+     
 
       <li><a href=<?php echo base_url().'index.php/user_controller/inventario'?>>
         <h5> <span class="glyphicon glyphicon-th-list" aria-hidden="true"> </span>
          &nbsp &nbsp Inventario</h5>
       </a></li>
 
-      <li><a href="ver_solicitud_bajas">
-       <h5> <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-         &nbsp &nbsp Solicitudes de baja</h5>
-      </a></li>
-
-      <li><a href="aprobar_pagos">
-        <h5> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span>
-         &nbsp &nbsp Aprobar compras</h5>
-      </a></li>
-
-      <li><a href="historial_pagos">
-        <h5> <span class="glyphicon glyphicon-usd" aria-hidden="true"> </span>
-         &nbsp &nbsp Historial de pagos</h5>
-      </a></li>
-
-      <li><a href="servicio">
-        <h5> <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
-        &nbsp &nbsp Agregar servicio</h5>
-      </a></li>
-
-      <li><a href="serv_chg">
-        <h5> <span class="glyphicon glyphicon-repeat" aria-hidden="true"> </span>
-         &nbsp &nbsp Modificar servicio</h5>
-      </a></li>
+      
     </ul>
   </div>
