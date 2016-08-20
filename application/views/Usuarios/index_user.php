@@ -117,10 +117,7 @@
             foreach ($pagos_clientes->result() as $pago_actual) {
 
                 $producto=$pago_actual->producto;
-<<<<<<< HEAD
                
-=======
->>>>>>> origin/master
                 $detail=$this->User_model->detalles_producto($producto);
                 foreach ($detail->result() as $detalle) {
                
