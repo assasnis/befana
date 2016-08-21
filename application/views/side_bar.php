@@ -39,6 +39,12 @@
          &nbsp &nbsp Inventario</h5>
       </a></li>
 
+      <li><a href=<?php echo base_url().'index.php/user_controller/ordenes_compra'?>>
+        <h5> <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span>
+         &nbsp &nbsp Aprobar ordenes de compra</h5>
+      </a></li>
+
+      
       
     </ul>
   </div>
