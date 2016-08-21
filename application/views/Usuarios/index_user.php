@@ -109,6 +109,8 @@
             $miercoles = 0;
             $jueves = 0;
             $viernes = 0;
+            $sabado = 0;
+            $domingo = 0;
             $i=0;
              
 
@@ -160,6 +162,18 @@
                 {
                   $viernes = $viernes + $pago_actual->precio;
                 }
+                else if($dia == 'Sunday')
+                {
+                  $sabado = $sabado + $pago_actual->precio;
+                }
+                else if($dia == 'Saturday')
+                {
+                  $sabado = $sabado + $pago_actual->precio;
+                }
+                else if($dia == 'Sunday')
+                {
+                  $domingo = $domingo + $pago_actual->precio;
+                }
             }
             echo '</tbody>';
 
@@ -180,6 +194,8 @@
                 echo '<th> Miercoles </th>';
                 echo '<th> Jueves </th>';
                 echo '<th> Viernes </th>';
+                echo '<th> Sábado </th>';
+                echo '<th> Domingo </th>';
               echo '</tr>';
             echo '</thead>';
 
@@ -190,6 +206,8 @@
                 echo '<td>'. $miercoles .'</td>';
                 echo '<td>'. $jueves .'</td>';
                 echo '<td>'. $viernes .'</td>';
+                echo '<td>'. $sabado.'</td>';
+                echo '<td>'. $domingo .'</td>';
               echo '</tr>';
             echo '</tbody>';
             echo '</table>';
