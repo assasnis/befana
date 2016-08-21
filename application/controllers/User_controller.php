@@ -42,6 +42,89 @@ class User_controller extends CI_Controller {
 		$this->load->view('/Usuarios/productos');
 	}
 
+	public function ordenes_compra()
+	{
+		$this->load->view('head');
+		$this->load->view('header');
+		$this->load->view('side_bar');
+		$this->load->view('/Gerente/orden_compra');
+	}
+
+	public function aprobar_orden_compra()
+	{
+
+		$id = $this->input->get('id');
+		$cons= $this->User_model->selec_orden($id);
+
+		$id_orden=null;
+
+		foreach ($cons->result() as $atributo) {
+				$id_orden=$atributo->id;
+				$aux['producto']=$atributo->producto;
+				$aux_marca=$atributo->marca;
+				$aux['proveedor']=$atributo->proveedor;	
+				$aux['precio']=$atributo->precio;
+				$aux_peso=$atributo->peso;
+				$aux['cantidad']=$atributo->cantidad;
+			}
+
+		if($id_orden==$id){
+
+			$consulta=$this->User_model->id_producto($aux['producto'],$aux_marca,$aux_peso);
+			$aux_id=null;
+
+			$nombre=null;
+
+			foreach ($consulta->result() as $atributo) {
+					$aux_id=$atributo->id;	
+					$marca=$atributo->marca;
+					$peso=$atributo->peso;
+					$nombre=$atributo->nombre;		
+				}
+				
+
+			if($nombre==$aux['producto'])
+			{	
+				$hoy = date('d-m-Y');
+				$fecha= date('Y-m-d', strtotime($hoy));
+				echo $fecha;
+				$aux['producto']=$aux_id;	
+				$aux['fecha']=$fecha;
+				echo $aux['producto'];
+				$this->User_model->aceptar_compra($aux);
+				$this->User_model->borrar_orden($id_orden);
+
+			}
+			else
+			{
+				$array['marca']=$aux_marca;
+				$array['nombre']=$aux['producto'];				
+				$array['peso']=$aux_peso;
+				$array['cantidad']=0;
+				$this->User_model->nuevo_producto($array);
+				$hoy = date('d-m-Y');
+				$fecha= date('Y-m-d', strtotime($hoy));			
+				
+				$aux['fecha']=$fecha;
+
+				$consulta=$this->User_model->id_producto($aux['producto'],$aux_marca,$aux_peso);
+
+					foreach ($consulta->result() as $atributo) {
+					$aux_id=$atributo->id;							
+				}
+				$aux['producto']=$aux_id;	
+				$this->User_model->aceptar_compra($aux);
+				$this->User_model->borrar_orden($id_orden);
+
+			}			
+			
+		}
+		
+		redirect(base_url()); 
+		
+}
+
+
 	public function validar()
 	{
 		
