@@ -47,7 +47,7 @@ class User_controller extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('header');
 		$this->load->view('side_bar');
-		$this->load->view('/usuario/orden_compra');
+		$this->load->view('/Usuarios/orden_compra');
 	}
 
 	public function aprobar_orden_compra()
